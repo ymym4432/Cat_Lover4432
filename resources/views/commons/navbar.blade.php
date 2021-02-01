@@ -12,6 +12,7 @@
                 <li class="nav-item"><a href="#" class="nav-link">Signup</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
             </ul>
+                    
         </div>
     </nav>
 </header>
