@@ -12,8 +12,12 @@ class DiariesController extends Controller
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-            $diaries = $user->diaries()->orderBy('created_at', 'desc')->paginate(10);
-            
+            $diaries = $user->diaries()->orderBy('created_at', 'desc')->paginate(25);
+            return view('diaries.index', [
+            'diaries' => $diaries,
+        ]);
+    
+
             $data = [
                 'user' => $user,
                 'diaries' => $diaries,
@@ -29,7 +33,7 @@ class DiariesController extends Controller
             'content' => 'required|max:191',
         ]);
 
-        $request->user()->microposts()->create([
+        $request->user()->diaries()->create([
             'content' => $request->content,
         ]);
 
