@@ -19,15 +19,15 @@
                 <li class="nav-item"><a href="#" class="nav-link">日記一覧</a></li>
             </ul>
             @if (Auth::id() == $user->id)
-                {!! Form::open(['route' => 'cat_lovers.store']) !!}
+                {!! Form::open(['route' => 'diaries.store']) !!}
                     <div class="form-group">
                         {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
                         {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
                     </div>
                 {!! Form::close() !!}
             @endif
-            @if (count($cat_lovers) > 0)
-                @include('cat_lovers.cat_lovers', ['cat_lovers' => $cat_lovers])
+            @if (count($diaries) > 0)
+                @include('diaries.diaries', ['diaries' => $diaries])
             @endif
         </div>
     </div>

@@ -13,9 +13,7 @@ class DiariesController extends Controller
         if (\Auth::check()) {
             $user = \Auth::user();
             $diaries = $user->diaries()->orderBy('created_at', 'desc')->paginate(25);
-            return view('diaries.index', [
-            'diaries' => $diaries,
-        ]);
+            
     
 
             $data = [
